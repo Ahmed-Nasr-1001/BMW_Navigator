@@ -1,0 +1,131 @@
+@import url(ModelsStyle.css);
+
+
+header {
+    margin-bottom: 50px;
+}
+
+body {
+    color: #936f38;
+}
+
+.granLogo{
+    text-align: right;
+    padding-top: 30px;
+    padding-right: 100px;
+}
+
+.granLogo>img{
+    height: 50px;
+}
+
+
+
+.hero {
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    padding-left: 150px;
+
+
+
+}
+
+.hero div {
+
+    margin-top: 100px;
+
+    font-size: 30px;
+    
+    /* Gold color */
+    text-align: left;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #bbb;
+}
+
+.hero img {
+
+
+    margin: 30px auto;
+}
+
+.partners {
+    text-align: left;
+    margin: 40px 0;
+
+}
+
+.partners h2 {
+    font-size: 1.8rem;
+
+    /* Gold color */
+    margin-left: 150px;
+}
+
+.partners p {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 20px;
+    margin-left: 150px;
+
+}
+
+.partner-logos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.partner-logos img {
+    height: 50px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.partner-logos img:hover {
+    opacity: 1;
+}
+
+img:hover {
+    transform: scale(1);
+}
+
+.pagecontent {
+    background-color: black;
+    padding-bottom: 100px;
+}
+
+
+.TIRES> :first-child img {
+    height: 350px;
+
+}
+
+.TIRES>:first-child {
+    margin-left: 100px;
+}
+
+.Tires_content {
+    margin-top: 100px;
+}
+
+
+
+.Tires_content>:last-child {
+    color: #bbb;
+}
+
+.pre_footer{
+    color: #bbb;
+ 
+}
+footer{
+    color: #bbb;
+
+
+}

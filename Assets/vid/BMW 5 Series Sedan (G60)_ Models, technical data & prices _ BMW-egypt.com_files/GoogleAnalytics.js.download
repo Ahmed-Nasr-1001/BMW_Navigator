@@ -1,0 +1,54 @@
+( window.p15r = window.p15r || []).push({
+  processingId: 'GoogleAnalytics',
+  action: 'register',
+  extra: {
+    disable: function () {
+      window.gtag('consent', 'update', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      });
+    },
+    enable: function () {
+      window.gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+      });
+    }
+  },
+  callback: function (pid, paramObj, cfg) {
+    if (window.gtag === undefined) {
+      const dlName = cfg.dataLayer ||  'gDataLayer'
+      if (!window.hasOwnProperty(dlName)) {
+        window[dlName] = [];
+      }
+      processingWrapper.util.loadScript('https://www.googletagmanager.com/gtag/js?l='+dlName+'&id=' + cfg["accountId"])
+      window.gtag = function () {
+        window[dlName].push(arguments);
+      }
+      window.gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      });
+      this.runProcessing.enable()
+      window.gtag('js', new Date());
+    }
+    if (cfg.hasOwnProperty("accountId")) {
+      window.gtag('config', cfg["accountId"], cfg.args);
+    } else if (cfg.hasOwnProperty("event")) {
+      processingWrapper.log("gtag called with args: ", cfg.args)
+      window.gtag.apply(this, [ 'event', cfg.event ].concat(Array.isArray(cfg.args) ? cfg.args : [ cfg.args]));
+    } else {
+      if (cfg.hasOwnProperty("args")) {
+        processingWrapper.log("gtag called with args: ", cfg.args)
+        window.gtag.apply(this, Array.isArray(cfg.args) ? cfg.args : [cfg.args]);
+      }
+    }
+  },
+  isCentral: true
+})

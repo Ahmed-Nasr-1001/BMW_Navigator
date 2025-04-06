@@ -1,0 +1,113 @@
+@import url(HomeStyle.css);
+
+
+
+body{
+    color: gray;
+    position: relative;
+}
+
+.globalnavigation_item a {
+    color: gray;
+}
+
+.line {
+   
+    top: 70px;
+    color: gray;
+}
+
+.globalnavigation{
+    height: auto;
+}
+
+.titleFindYourBMW{
+    font-size: 40px;
+    text-align: left;
+    margin-left: 150px;
+    margin-top: 50px;
+    color: rgb(30, 29, 29);
+}
+
+.modelsNavBar {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.273);
+}
+
+.modelsNavBar ul {
+    margin-left: 145px;
+    list-style: none; 
+    padding: 0;
+    display: flex; 
+    gap: 20px; 
+}
+
+
+
+.globalnavigation_item a {
+    text-decoration: none;
+    color: black;
+}
+
+#gitem{
+    width: 20px;
+}
+
+#gitem::after {
+    background-color: black;
+    bottom: -17px;
+}
+
+
+
+.Model_class {
+    margin-top: 18px;
+}
+
+
+.Model_list{
+    
+    display: flex;
+    width: 500px;
+    margin-left: 110px;
+    margin-bottom: 40px;
+    list-style: none;
+
+}
+
+.Model_item img{
+   
+    width: 400px;
+    transition: transform 0.3s ease;
+
+}
+
+.Model_item img:hover{
+    transform: scale(1.2);
+}
+
+.Model_class {
+    text-align: left;
+    
+}
+.Model_class  img{
+    width: 20px;
+    
+}
+
+.Model_title{
+    
+    color: black;
+    text-align: left;
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 30px;
+    padding-top: 10px;
+    border-top: 2px; border-top-style: solid ; border-color: rgba(128, 128, 128, 0.53);
+}
+
+#i{
+    border-top: 0px;
+}
